@@ -2,9 +2,50 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: "Arial";
 }
 
 body {
     background-color: #333;
     color: white;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+#email-container {
+    background-color: #222;
+    width: 400px;
+    height: 300px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0.5rem;
+    
+    form {
+        padding: 2rem;
+
+        input {
+            height: 30px;
+        }
+    }
+
+    button {
+        background-color: crimson;
+        color: white;
+        width: 200px;
+        height: 40px;
+        border: none;
+        align-self: center;
+        font-size: 1.5rem;
+        padding: 0.1rem;
+        border-radius: 0.5rem;
+        transition: 250ms;
+        cursor: pointer;
+
+        &:hover {
+            background-color: red;
+        }
+    }
 }
