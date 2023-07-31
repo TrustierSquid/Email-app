@@ -1,0 +1,16 @@
+{
+  "name": "emailapi",
+  "version": "1.0.0",
+  "source": "index.html",
+  "description": "",
+  "scripts": {
+    "start": "parcel index.html --no-cache",
+    "build": "parcel build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.9.3",
+    "parcel": "^2.9.3"
+  }
+}
