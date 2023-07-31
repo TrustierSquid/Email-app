@@ -10,22 +10,39 @@ submitbtn.addEventListener('click', Email)
 
 function Email():void {
     emailjs.init('fe27j37HF7dPw5soA')
-    // if nothing is entered, do nothing
-    if (inputField[0].value == '' || inputField[1].value == '') return
-    let params: {name: string, text: string} = {
+    let params: {name: string, email: string, text: string} = {
         name: inputField[0].value,
-        text: inputField[1].value
+        email: inputField[1].value,
+        text: inputField[2].value
+    }
+    
+    // Status message you get when you enter information
+    let statusMessage: any = document.getElementById('status-message')
+
+    // if nothing is entered, do nothing
+    if (inputField[0].value == '' || inputField[1].value == '' || inputField[2].value == '') {
+        statusMessage.innerHTML = 'Please enter your name, email, and message.'
+        console.log("that did not send because the user did not enter all the required fields")
+        
+        statusMessage.classList.add('bad')
+        
+    } else {
+        sendEmail()
     }
 
-    sendEmail()
+
 
     function sendEmail(): void {
         emailjs.send(serviceID, templateID, params)
             .then(response => {
                 // If successful
+                statusMessage.classList.remove('bad')
+                statusMessage.innerHTML = 'Email was sent successfully! 😊'
+                statusMessage.classList.add('good')
                 console.log(response.status);
                 inputField[0].value = '';
                 inputField[1].value = '';
+                inputField[2].value = '';
             }).then(error => {
                 // If failed
                 console.log(error)
