@@ -11,14 +11,23 @@
     <div id="email-container">
         <h1>Send Email to me</h1>
         <form>
-            <label>Name:</label><br>
-            <input type="text" class="input-field">
+            <div class="form-item">
+                <label>Name:</label><br>
+                <input type="text" class="input-field" placeholder="Your Name">
+            </div>
             <br>
+            <div class="form-item">
+                <label>Email:</label><br>
+                <input type="email" class="input-field" placeholder="john@sample.com">
+            </div>
             <br>
-            <label>Message:</label><br>
-            <input type="text" class="input-field">
+            <div class="form-item">
+                <label>Message:</label><br>
+                <textarea type="text" class="input-field" placeholder="Message"></textarea>
+            </div>
         </form>
-        <button id="submitbtn">Submit</button>
+        <button id="submitbtn" type="submit">Submit</button>
+        <p id="status-message"></p>
     </div>
 </body>
 </html>
